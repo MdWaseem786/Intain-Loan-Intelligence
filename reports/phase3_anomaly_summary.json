@@ -1,0 +1,38 @@
+{
+  "total_records": 10200,
+  "synthetic_records": 200,
+  "flagged_records": 33,
+  "severity_distribution": {
+    "NONE": 10167,
+    "MEDIUM": 31,
+    "HIGH": 2
+  },
+  "rule_trigger_counts": {
+    "balance_discrepancy_flag": 1,
+    "delinquency_status_lag_flag": 32,
+    "missing_modification_flag": 2,
+    "invalid_value_flag": 0
+  },
+  "evaluation": {
+    "evaluated_records": 10200,
+    "true_anomalies": 205,
+    "predicted_anomalies": 33,
+    "true_negatives": 9974,
+    "false_positives": 21,
+    "false_negatives": 193,
+    "true_positives": 12,
+    "precision": 0.36363636363636365,
+    "recall": 0.05853658536585366,
+    "f1": 0.10084033613445378,
+    "confusion_matrix": [
+      [
+        9974,
+        21
+      ],
+      [
+        193,
+        12
+      ]
+    ]
+  }
+}

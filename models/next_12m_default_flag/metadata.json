@@ -1,0 +1,77 @@
+{
+  "target": "next_12m_default_flag",
+  "model": "HistGradientBoosting",
+  "features": [
+    "original_interest_rate",
+    "current_interest_rate",
+    "original_upb",
+    "current_actual_upb",
+    "original_loan_term",
+    "origination_date",
+    "first_payment_date",
+    "loan_age",
+    "remaining_months_to_maturity",
+    "adjusted_months_to_maturity",
+    "maturity_date",
+    "original_ltv",
+    "original_cltv",
+    "number_of_borrowers",
+    "dti_ratio",
+    "borrower_credit_score",
+    "co_borrower_credit_score",
+    "number_of_units",
+    "mi_percentage",
+    "current_modified",
+    "pct_life_elapsed",
+    "rate_spread",
+    "upb_pct_original",
+    "ever_delinquent",
+    "max_delinquency_to_date",
+    "months_since_last_delinquency",
+    "delinquency_count_12m",
+    "ever_modified"
+  ],
+  "threshold": 0.99,
+  "validation_period": "2016-01 to 2017-12",
+  "final_training_cutoff": "2017-12",
+  "seed": 42,
+  "validation_metrics": {
+    "roc_auc": 0.7199981845590643,
+    "pr_auc": 0.22896077864469594,
+    "precision": 0.42857142857142855,
+    "recall": 0.403125,
+    "f1": 0.41545893719806765,
+    "brier": 0.003073973610823221,
+    "log_loss": 0.03451862488343672,
+    "confusion_matrix": [
+      [
+        158536,
+        172
+      ],
+      [
+        191,
+        129
+      ]
+    ]
+  },
+  "holdout_metrics": {
+    "roc_auc": 0.830278646904701,
+    "pr_auc": 0.06095494646888497,
+    "precision": 0.04725415070242656,
+    "recall": 0.13357400722021662,
+    "f1": 0.06981132075471698,
+    "brier": 0.004002455978845682,
+    "log_loss": 0.03865238809658686,
+    "confusion_matrix": [
+      [
+        268903,
+        746
+      ],
+      [
+        240,
+        37
+      ]
+    ]
+  },
+  "training_seconds": 13.889531135559082
+}

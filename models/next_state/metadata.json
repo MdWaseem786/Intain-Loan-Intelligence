@@ -1,0 +1,63 @@
+{
+  "classes": [
+    "30DPD",
+    "60DPD",
+    "90+DPD",
+    "Current",
+    "Default/REO",
+    "Prepaid",
+    "Unknown"
+  ],
+  "mapping": {
+    "30DPD": 0,
+    "60DPD": 1,
+    "90+DPD": 2,
+    "Current": 3,
+    "Default/REO": 4,
+    "Prepaid": 5,
+    "Unknown": 6
+  },
+  "features": [
+    "original_interest_rate",
+    "current_interest_rate",
+    "original_upb",
+    "current_actual_upb",
+    "original_loan_term",
+    "origination_date",
+    "first_payment_date",
+    "loan_age",
+    "remaining_months_to_maturity",
+    "adjusted_months_to_maturity",
+    "maturity_date",
+    "original_ltv",
+    "original_cltv",
+    "number_of_borrowers",
+    "dti_ratio",
+    "borrower_credit_score",
+    "co_borrower_credit_score",
+    "number_of_units",
+    "mi_percentage",
+    "current_modified",
+    "pct_life_elapsed",
+    "rate_spread",
+    "upb_pct_original",
+    "ever_delinquent",
+    "max_delinquency_to_date",
+    "months_since_last_delinquency",
+    "delinquency_count_12m",
+    "ever_modified"
+  ],
+  "validation_metrics": {
+    "macro_f1": 0.3144674727198539,
+    "weighted_f1": 0.9594486604294613,
+    "balanced_accuracy": 0.3221199872513926,
+    "log_loss": 0.14176202406704821
+  },
+  "holdout_metrics": {
+    "macro_f1": 0.28940650865523193,
+    "weighted_f1": 0.9538696674806166,
+    "balanced_accuracy": 0.2900203311281774,
+    "log_loss": 0.220222362146463
+  },
+  "training_seconds": 121.53215432167053
+}

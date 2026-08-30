@@ -1,0 +1,82 @@
+{
+  "target": "next_12m_default_flag",
+  "model": "HistGradientBoosting",
+  "features": [
+    "original_interest_rate",
+    "current_interest_rate",
+    "original_upb",
+    "current_actual_upb",
+    "original_loan_term",
+    "origination_date",
+    "first_payment_date",
+    "loan_age",
+    "remaining_months_to_maturity",
+    "adjusted_months_to_maturity",
+    "maturity_date",
+    "original_ltv",
+    "original_cltv",
+    "number_of_borrowers",
+    "dti_ratio",
+    "borrower_credit_score",
+    "co_borrower_credit_score",
+    "number_of_units",
+    "mi_percentage",
+    "current_modified",
+    "pct_life_elapsed",
+    "rate_spread",
+    "upb_pct_original",
+    "ever_delinquent",
+    "max_delinquency_to_date",
+    "months_since_last_delinquency",
+    "delinquency_count_12m",
+    "ever_modified"
+  ],
+  "validation": {
+    "dataset": "validation_2016_2017",
+    "rows": 159028,
+    "positive_events": 320,
+    "positive_rate": 0.002012224262394044,
+    "roc_auc": 0.8273978095779672,
+    "pr_auc": 0.4548369857869016,
+    "precision_at_1pct": 0.16540880503144653,
+    "recall_at_1pct": 0.821875,
+    "precision_at_5pct": 0.03320337064520186,
+    "recall_at_5pct": 0.825,
+    "precision_at_10pct": 0.01666457049427745,
+    "recall_at_10pct": 0.828125
+  },
+  "holdout": {
+    "dataset": "holdout_2018_2025",
+    "rows": 269926,
+    "positive_events": 277,
+    "positive_rate": 0.0010262071827093352,
+    "roc_auc": 0.830278646904701,
+    "pr_auc": 0.06095494646888497,
+    "precision_at_1pct": 0.06520933679140423,
+    "recall_at_1pct": 0.6353790613718412,
+    "precision_at_5pct": 0.01704208654416123,
+    "recall_at_5pct": 0.8303249097472925,
+    "precision_at_10pct": 0.008558091286307055,
+    "recall_at_10pct": 0.8339350180505415
+  },
+  "probability_distribution": {
+    "validation": {
+      "min": 6.2534510954687766e-52,
+      "p50": 0.0006456900036516848,
+      "p90": 0.0006456900036516848,
+      "p95": 0.0007487023138853632,
+      "p99": 0.0027988746337459626,
+      "max": 0.9999999999784897,
+      "mean": 0.0025908832575365663
+    },
+    "holdout": {
+      "min": 1.8879179556335565e-52,
+      "p50": 0.0006456900036516848,
+      "p90": 0.0006456900036516848,
+      "p95": 0.0008483514223781847,
+      "p99": 0.011600470053502761,
+      "max": 1.0,
+      "mean": 0.004920491074145778
+    }
+  }
+}

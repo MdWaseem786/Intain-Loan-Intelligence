@@ -1,0 +1,103 @@
+{
+  "target": "next_12m_default_flag",
+  "selected_calibration": "isotonic",
+  "validation": {
+    "raw": {
+      "method": "raw",
+      "brier": 0.0014274410241660392,
+      "log_loss": 0.01333174890265895,
+      "roc_auc": 0.8273978095779672,
+      "pr_auc": 0.4548369857869016,
+      "mean_probability": 0.0025908832575365663,
+      "actual_rate": 0.002012224262394044,
+      "calibration_bins": [
+        {
+          "predicted": 0.0006436672786233788,
+          "actual": 0.0003757910065159476
+        },
+        {
+          "predicted": 0.031582009040490806,
+          "actual": 0.026376261364771704
+        }
+      ]
+    },
+    "sigmoid": {
+      "method": "sigmoid",
+      "brier": 0.0014345093982966605,
+      "log_loss": 0.008637965487463024,
+      "roc_auc": 0.8273816931093583,
+      "pr_auc": 0.45484561276737845,
+      "mean_probability": 0.0020118303492877923,
+      "actual_rate": 0.002012224262394044,
+      "calibration_bins": [
+        {
+          "predicted": 0.0008314974026585939,
+          "actual": 0.0003757910065159476
+        },
+        {
+          "predicted": 0.019585217837948362,
+          "actual": 0.026376261364771704
+        }
+      ]
+    },
+    "isotonic": {
+      "method": "isotonic",
+      "brier": 0.0011860169407844942,
+      "log_loss": 0.005740786984374751,
+      "roc_auc": 0.9110283901882703,
+      "pr_auc": 0.4794804205702584,
+      "mean_probability": 0.0020122242623940435,
+      "actual_rate": 0.002012224262394044,
+      "calibration_bins": [
+        {
+          "predicted": 0.0003561842490230155,
+          "actual": 0.00035618424902367354
+        },
+        {
+          "predicted": 0.1461794019933553,
+          "actual": 0.1461794019933555
+        }
+      ]
+    }
+  },
+  "holdout": {
+    "raw": {
+      "method": "holdout_raw",
+      "brier": 0.004002455978845682,
+      "log_loss": 0.03865238809658686,
+      "roc_auc": 0.830278646904701,
+      "pr_auc": 0.06095494646888497,
+      "mean_probability": 0.004920491074145778,
+      "actual_rate": 0.0010262071827093352,
+      "calibration_bins": [
+        {
+          "predicted": 0.0006413840892549188,
+          "actual": 0.00018681796214093386
+        },
+        {
+          "predicted": 0.04938351313530031,
+          "actual": 0.009748069375870364
+        }
+      ]
+    },
+    "calibrated": {
+      "method": "holdout_calibrated",
+      "brier": 0.002589008056101438,
+      "log_loss": 0.016596362857866708,
+      "roc_auc": 0.8501560318292104,
+      "pr_auc": 0.05789022405932709,
+      "mean_probability": 0.003771188265250443,
+      "actual_rate": 0.0010262071827093352,
+      "calibration_bins": [
+        {
+          "predicted": 0.00035618424902464867,
+          "actual": 0.0003015613338057794
+        },
+        {
+          "predicted": 0.1990196269395512,
+          "actual": 0.04245689655172414
+        }
+      ]
+    }
+  }
+}
