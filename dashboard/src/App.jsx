@@ -67,6 +67,18 @@ function formatScenarioPercent(value) {
   return `${percentage.toFixed(2)}%`;
 }
 
+function extractArray(result, key) {
+  if (Array.isArray(result)) {
+    return result;
+  }
+
+  if (result && Array.isArray(result[key])) {
+    return result[key];
+  }
+
+  return [];
+}
+
 function riskClass(riskBand) {
   if (!riskBand) {
     return "";
@@ -146,24 +158,51 @@ function App() {
           : null
       );
 
+      /*
+       * API returns:
+       * {
+       *   loan_id: "...",
+       *   count: ...,
+       *   history: [...]
+       * }
+       *
+       * Store only the actual history array.
+       */
       setHistory(
-        historyResult.status === "fulfilled" &&
-        Array.isArray(historyResult.value)
-          ? historyResult.value
+        historyResult.status === "fulfilled"
+          ? extractArray(historyResult.value, "history")
           : []
       );
 
+      /*
+       * API returns:
+       * {
+       *   loan_id: "...",
+       *   count: ...,
+       *   anomalies: [...]
+       * }
+       *
+       * Store only the actual anomalies array.
+       */
       setAnomalies(
-        anomaliesResult.status === "fulfilled" &&
-        Array.isArray(anomaliesResult.value)
-          ? anomaliesResult.value
+        anomaliesResult.status === "fulfilled"
+          ? extractArray(anomaliesResult.value, "anomalies")
           : []
       );
 
+      /*
+       * API returns:
+       * {
+       *   loan_id: "...",
+       *   count: ...,
+       *   scenarios: [...]
+       * }
+       *
+       * Store only the actual scenarios array.
+       */
       setScenarios(
-        scenariosResult.status === "fulfilled" &&
-        Array.isArray(scenariosResult.value)
-          ? scenariosResult.value
+        scenariosResult.status === "fulfilled"
+          ? extractArray(scenariosResult.value, "scenarios")
           : []
       );
     } catch (err) {
@@ -188,13 +227,18 @@ function App() {
     try {
       const result = await getScenarioSummary();
 
-      if (Array.isArray(result)) {
-        setScenarioSummary(result);
-      } else if (result && typeof result === "object") {
-        setScenarioSummary(result);
-      } else {
-        setScenarioSummary([]);
-      }
+      /*
+       * API returns:
+       * {
+       *   count: ...,
+       *   scenarios: [...]
+       * }
+       *
+       * Store only the actual scenarios array.
+       */
+      setScenarioSummary(
+        extractArray(result, "scenarios")
+      );
     } catch (err) {
       console.error("Scenario summary error:", err);
       setScenarioSummary([]);
@@ -308,7 +352,9 @@ function App() {
       <header className="topbar">
         <div>
           <div className="brand">INTAIN</div>
-          <div className="brand-sub">Loan Intelligence Platform</div>
+          <div className="brand-sub">
+            Loan Intelligence Platform
+          </div>
         </div>
 
         <div className="system-status">
@@ -318,7 +364,6 @@ function App() {
       </header>
 
       <main className="container">
-
         <section className="hero">
           <div>
             <div className="eyebrow">
@@ -389,7 +434,6 @@ function App() {
             </section>
 
             <section className="metrics-grid">
-
               <div className="metric-card">
                 <div className="metric-label">
                   12M Default Probability
@@ -445,11 +489,9 @@ function App() {
                   Expected prepayment probability
                 </div>
               </div>
-
             </section>
 
             <section className="dashboard-grid">
-
               <div className="panel">
                 <div className="panel-title">
                   <div>
@@ -486,7 +528,6 @@ function App() {
                 </div>
 
                 <div className="risk-list">
-
                   <div>
                     <span>3-Month Delinquency</span>
                     <strong>
@@ -523,7 +564,6 @@ function App() {
                       </strong>
                     </div>
                   )}
-
                 </div>
 
                 {drivers.length > 0 && (
@@ -577,11 +617,9 @@ function App() {
                   </div>
                 )}
               </div>
-
             </section>
 
             <section className="dashboard-grid">
-
               <div className="panel">
                 <div className="panel-title">
                   <div>
@@ -633,11 +671,9 @@ function App() {
                   </div>
                 )}
               </div>
-
             </section>
 
             <section className="dashboard-grid">
-
               <div className="panel">
                 <div className="panel-title">
                   <div>
@@ -744,7 +780,6 @@ function App() {
                   </div>
                 )}
               </div>
-
             </section>
 
             <section className="panel history-panel">

@@ -40,7 +40,24 @@ def search_loans(
     q: str = Query("", description="Loan ID search"),
     limit: int = Query(20, ge=1, le=100),
 ):
-    result = data.find_loans(q, limit)
+    performance_loan_ids = set(
+        data.test["loan_id"].astype(str).unique()
+    )
+
+    result = data.static[
+        data.static["loan_id"].astype(str).isin(performance_loan_ids)
+    ].copy()
+
+    if q:
+        result = result[
+            result["loan_id"].astype(str).str.contains(
+                str(q),
+                case=False,
+                na=False,
+            )
+        ]
+
+    result = result.head(limit)
 
     return {
         "count": len(result),
