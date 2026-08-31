@@ -24,3 +24,6 @@ Thumbs.db
 *.bak
 
 data/
+
+# HackerEarth submission package
+Intain-Loan-Intelligence-Source.zip
