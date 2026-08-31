@@ -4,7 +4,7 @@ import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data" / "processed"
+DATA = ROOT / "deployment_data" / "processed"
 MODELS = ROOT / "models"
 
 

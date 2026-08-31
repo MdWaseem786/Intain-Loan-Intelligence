@@ -1,0 +1,2 @@
+loan_id,monthly_reporting_period,servicer_name,current_actual_upb,current_interest_rate,current_delinquency_status,monthly_modification_flag,is_synthetic,anomaly_type,balance_discrepancy_flag,delinquency_status_lag_flag,missing_modification_flag,invalid_value_flag,anomaly_rule_count,anomaly_flag,anomaly_severity,anomaly_explanation,ground_truth_anomaly,ground_truth_type
+100743858187,62017,Other,114111.89,5.375,00,N,False,,False,False,False,False,0,False,NONE,No anomaly detected,False,
